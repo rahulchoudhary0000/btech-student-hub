@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>B.Tech 1st Year Student Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #174f91;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-size: 18px;
+        }
+
+        nav {
+            background: #123d70;
+            padding: 14px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: white;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            color: #174f91;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .search-box {
+            width: 80%;
+            max-width: 600px;
+            padding: 15px;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        section {
+            padding: 45px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #174f91;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #174f91;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background: #174f91;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #123d70;
+        }
+
+        /* TIMETABLE */
+
+        #timetable {
+            background: #eef3f9;
+        }
+
+        .table-container {
+            max-width: 1100px;
+            margin: auto;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #174f91;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 14px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        tr:hover {
+            background: #eef5ff;
+        }
+
+        .notice {
+            max-width: 800px;
+            margin: 12px auto;
+            background: white;
+            padding: 18px;
+            border-left: 5px solid #174f91;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        footer {
+            background: #123d70;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 25px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .search-box {
+                width: 95%;
+            }
+        }
+     @media (max-width: 600px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+} 
+ button {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+} 
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>Engineering College Ajmer</h1>
+        <p>B.Tech 1st Year Student Hub</p>
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#notes">Notes</a>
+        <a href="#timetable">Timetable</a>
+        <a href="#notices">Notices</a>
+    </nav>
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+        <h2>Welcome Students 👋</h2>
+
+        <p>
+            B.Tech 1st Year ke notes, subjects aur timetable ek jagah.
+        </p>
+
+        <input
+            type="text"
+            class="search-box"
+            id="search"
+            placeholder="Search subject..."
+            onkeyup="searchSubject()"
+        >
+    </section>
+
+    <!-- SUBJECTS -->
+    
+    <section class="welcome">
+    <h2>🚀 Welcome to B.Tech Student Hub</h2>
+    <p>Apni B.Tech journey ko easy aur organized banao!</p>
+
+    <a href="#subjects">
+        <button>📚 Start Learning</button>
+    </a>
+</section>
+    <section id="subjects">
+
+        <h2>📚 Subjects</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Engineering Mathematics</h3>
+                <p>Maths ke important topics aur notes.</p>
+                <a href="maths.html">
+    <button>Open</button>
+</a>
+            </div>
+
+            <div class="card">
+                <h3>C Programming</h3>
+                <p>C language ke basic programs aur concepts.</p>
+               <a href="c-programming.html">
+    <button>Open</button>
+</a>
+            </div>
+
+            <div class="card">
+               <h3>Communication Skills</h3>
+<p>English grammar aur communication practice.</p>
+<a href="communication.html">
+    <button>Open</button>
+</a>
+            </div>
+
+            <div class="card">
+               <h3>Engineering Physics</h3>
+<p>Physics ke important topics aur notes.</p>
+<a href="physics.html">
+    <button>Open</button>
+</a>
+            </div>
+
+            <div class="card">
+<h3>Engineering Chemistry</h3>
+<p>Chemistry ke important topics aur notes.</p>
+<a href="chemistry.html">
+    <button>Open</button>
+</a>
+            </div>
+
+            <div class="card">
+              <h3>IBE</h3>
+<p>IBE ke notes aur important topics.</p>
+<a href="ibe.html">
+    <button>Open</button>
+</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NOTES -->
+
+    <section id="notes">
+
+        <h2>📝 Notes</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>C Programming Notes</h3>
+                <p>Basic C programs aur important concepts.</p>
+               <a href="c-programming.html">
+    <button>View Notes</button>
+</a>
+            </div>
+
+            <div class="card">
+                <h3>Maths Notes</h3>
+                <p>Important formulas aur questions.</p>
+              <a href="maths.html">
+    <button>View Notes</button>
+</a>
+            </div>
+
+            <div class="card">
+                <h3>Physics Notes</h3>
+                <p>Engineering Physics ke notes.</p>
+               <a href="physics.html">
+    <button>View Notes</button>
+</a>
+            </div>
+            <div class="topic">
+    <h3>🧪 Chemistry Notes</h3>
+    <p>Engineering Chemistry ke important topics aur notes.</p>
+
+    <a href="chemistry.html">
+        <button>View Notes</button>
+    </a>
+</div>
+<div class="card">
+    <h3>🏗️ IBE Notes</h3>
+    <p>Introduction to Built Environment ke important topics aur notes.</p>
+
+    <a href="ibe.html">
+        <button>View Notes</button>
+    </a>
+</div>
+<div class="card">
+    <h3>🗣️ Communication Skills Notes</h3>
+    <p>Communication Skills ke important topics aur notes.</p>
+
+    <a href="communication.html">
+        <button>View Notes</button>
+    </a>
+</div>
+
+        </div>
+    </section>
+
+    <!-- TIMETABLE -->
+    
+    <section id="about">
+    <h2>🎓 About B.Tech Student Hub</h2>
+
+    <div class="card">
+        <h3>📚 B.Tech 1st Year Student Hub</h3>
+        <p>
+            Ye website B.Tech 1st year students ke liye banayi gayi hai.
+            Yahan students apne subjects, notes, timetable aur important
+            notices ek hi jagah dekh sakte hain.
+        </p>
+
+        <p>
+            💻 Subjects | 📖 Notes | 🕒 Timetable | 📢 Notices
+        </p>
+    </div>
+</section>
+    <section id="timetable">
+
+       <h2>📅 B.Tech 1st Year I-Sem Timetable 2026-27</h2>
+
+<div class="timetable-box">
+    <p><b>Engineering College Ajmer</b></p>
+    <p>Complete Timetable — Section A to H</p>
+
+    <iframe
+        src="Time Table B Tech I Sem Session 2026-27.pdf"
+        width="100%"
+        height="1200"
+        style="border: 2px solid #ddd; border-radius: 12px;">
+    </iframe>
+</div>
+
+        </div>
+    </section>
+
+    <!-- NOTICES -->
+
+    <section id="notices">
+
+        <h2>📢 Notices</h2>
+
+        <div class="notice">
+            <b>Notice 1:</b> B.Tech 1st Year classes regular chal rahi hain.
+        </div>
+
+        <div class="notice">
+            <b>Notice 2:</b> Students apna timetable regularly check karein.
+        </div>
+
+        <div class="notice">
+            <b>Notice 3:</b> Important updates yahan add kiye jayenge.
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+   
+    <section id="contact">
+    <h2>📞 Contact / Help</h2>
+
+    <div class="card">
+        <h3>💬 Student Help</h3>
+        <p>Website, notes ya subjects se related help ke liye contact karein.</p>
+        <p>📧 Email: studenthub@example.com</p>
+        <p>🎓 B.Tech 1st Year Student Hub</p>
+    </div>
+</section>
+    <footer>
+        <p>© 2026 B.Tech 1st Year Student Hub</p>
+        <p>Engineering College Ajmer</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showMessage(subject) {
+            alert(subject + " section abhi jaldi add hoga!");
+        }
+
+        function searchSubject() {
+
+            let input = document
+                .getElementById("search")
+                .value
+                .toLowerCase();
+
+            let cards = document.querySelectorAll(".card");
+
+            cards.forEach(function(card) {
+
+                let text = card.innerText.toLowerCase();
+
+                if (text.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>
